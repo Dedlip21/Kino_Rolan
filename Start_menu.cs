@@ -15,14 +15,13 @@ namespace Kino_Rolan
 
         public Start_menu()
         {
-            MainMenu menu = new MainMenu();
+            /*MainMenu menu = new MainMenu();
             MenuItem menuFile = new MenuItem("Seaded");
             menuFile.MenuItems.Add("Admin", new EventHandler(menuAdmin)).Shortcut = Shortcut.CtrlS;
             //menuFile.MenuItems.Add("Размер", new EventHandler());
             //menuFile.MenuItems.Add("Postimees", new EventHandler());
             menu.MenuItems.Add(menuFile);
-
-            this.Menu = menu;
+            this.Menu = menu;*/
 
             this.Icon = Properties.Resources.icon;
             this.Text = "Kinoworld";
@@ -71,6 +70,16 @@ namespace Kino_Rolan
             };
             Pravil_btn.Click += Pravil_btn_Click;
 
+            Button Admin_btn = new Button
+            {
+                Text = "Admin",
+                Location = new System.Drawing.Point(220, 310),//Point(x,y)
+                Height = 50,
+                Width = 120,
+                BackColor = Color.LightYellow
+            };
+            Admin_btn.Click += Admin_btn_Click;
+
 
 
             Label lbl = new Label
@@ -87,6 +96,7 @@ namespace Kino_Rolan
             this.Controls.Add(Kinozal_btn);
             this.Controls.Add(Info_btn);
             this.Controls.Add(Pravil_btn);
+            this.Controls.Add(Admin_btn);
             this.Controls.Add(lbl);
 
             // this.BackColor = Color.LightSalmon;
@@ -102,7 +112,12 @@ namespace Kino_Rolan
             this.Width = 800;
         }
 
-
+        private void Admin_btn_Click(object sender, EventArgs e)
+        {
+            AdminMenu uus_aken = new AdminMenu();//запускает пустую форму
+            uus_aken.StartPosition = FormStartPosition.CenterScreen;
+            uus_aken.Show();
+        }
 
         int scetcikafi = 0;
         private void Listat_btn_Click(object sender, EventArgs e)
@@ -158,13 +173,6 @@ namespace Kino_Rolan
             uus_aken.StartPosition = FormStartPosition.CenterScreen;
             uus_aken.Show();
             this.Hide();
-        }
-
-        private void menuAdmin(object sender, EventArgs e)
-        {
-            AdminMenu uus_aken = new AdminMenu();
-            uus_aken.StartPosition = FormStartPosition.CenterScreen;
-            uus_aken.Show();
         }
     }
 }

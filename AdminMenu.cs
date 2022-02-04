@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,14 +10,11 @@ using System.Windows.Forms;
 
 namespace Kino_Rolan
 {
-    class AdminMenu
+    public partial class AdminMenu: Form
     {
-        public FormStartPosition StartPosition { get; internal set; }
-        public Size ClientSize { get; private set; }
 
-        internal void Show()
+        public AdminMenu()
         {
-            this.ClientSize = new System.Drawing.Size(720, 500);
 
         }
     }
